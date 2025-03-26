@@ -1,24 +1,57 @@
 ---
+import Navigation from "../components/Navigation.astro";
 const { frontmatter } = Astro.props;
 ---
+
 <style>
+
+    html{
+        background-color: black;
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    body{
+        margin: 0px;
+    }
+
     .container_post{
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: red;
-        & h1{
-            font-size: 48px;
+        width: 850px;
+        margin: 0 auto;
+        color: white;
+        font-family: "Open Sans";
+        font-weight: 400;
+        line-height: 30px;
+        pre{
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        & .title_post{
+            color: white;
+            font-family: "Open Sans";
+            font-size: 46px;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+            padding-bottom: 20px;
+        }
+        & p{
+            color: white; 
+            display: inline-block;
+            font-family: "Open Sans";
         }
     }
-    .date{
-        color: gray;
-    }
+  
 </style>
-<meta charset="utf-8" />
+<head>    
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">	  
+</head>  
+<Navigation />
 <div class="container_post">
-    <h1>{frontmatter.title}</h1>
+    <h2 class="title_post">{frontmatter.title}</h2>
     <p class="date">{frontmatter.pubDate.toString().slice(0,10)}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Written by: {frontmatter.author}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
 </div>
-<slot />

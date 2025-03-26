@@ -2,44 +2,41 @@
 ---
 <style>
     header{
-        display: flex;
-        justify-content: center;
-        background-color: white;
         width: 100%;
+        background-color: black;
+        height: 60px;
+        box-shadow: 0px 0px .7px white;
     }
 
     header .container_header{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 20px 0px;
-        width: 1050px;
-    }
-
-    header .container_header .menu_container{
-       display: flex;
-       justify-content: end;
-       font-family: Arial, Helvetica, sans-serif;
-       & a{
-        text-decoration: none;
-        color: black;
-        font-weight: 600;
-        margin-left: 20px;
-        transition: color 500ms;
-       }
-
-       & a:hover{
-        color: gray
-       }
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        color: white;
+        font-family: "Open Sans";
+        .to_blog{
+            font-weight: 400;
+            font-size: 32px;
+        }
+        & a{
+            color: #919191;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 500ms;
+        }
+        & a:hover {
+            color: white;
+        }
     }
 </style>
 <header>
    <div class="container_header">
-        <div>
-        LOGO
-       </div>
-       <div class="menu_container">
-        <a href="/">Blog</a>
-        <a href="/about/">Sobre mi</a>
-       </div>
+    <h3><a href="" class="to_blog">Blog</a></h3>
+    <a href="">Sobre mí</a>
    </div>
 </header>

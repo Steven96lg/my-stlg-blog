@@ -4,31 +4,42 @@ const {title, img, description, date, link} = Astro.props
 <style>
     .card_post{
         width: 100%;
-        display: flex;
-        margin-top: 20px;
-        & img{
-            width: 300px;
-            border-radius: 5px;
-        }
-        & div{
-            margin-left: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            & h2 {
-                font-size: 40px;
-                margin-bottom: 16px;
-                a{
-                    color: gray;
-                    text-decoration: none;
-                }
+        & .cont_cards{
+            font-family:"Open Sans";
+            padding-bottom: 20px;
+            margin-top: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            & a{
+                color: white;
+                text-decoration: solid;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            & p{
+                color: #919191;
+                font-family:"Open Sans";
+                font-size: 16px;
+                font-weight: 600;
+                margin-top: 10px;
+            }
+
+            & i{
+                color: #919191;
+                font-family:"Open Sans";
+                font-size: 14px;
+                font-weight: 600;
+                margin-top: 10px;
+                display: inline-block;
             }
         }
     }
+
 </style>
 <div class="card_post">
-    <img src={img} alt='img'>
-    <div>
-        <h2><a href={link}>{title}</a></h2>
-        <strong>{description}</strong>
-        <p>{date}</>
+    <div class="cont_cards">
+        <a href={link}>{title}</a>
+        <p>{description}</p>
+        <i>{date.toString().slice(0,10)}</i>
     </div>
 </div>

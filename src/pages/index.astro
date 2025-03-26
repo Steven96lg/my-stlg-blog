@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import CardPostLayout from '../layouts/CardPostLayout.astro'
+import CardUser from '../components/CardUser.astro'
 const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}))
 ---
 <html lang="en">
@@ -8,10 +9,14 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}))
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width" />
     <title>Astro</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">	
   </head>
   <body>
 	<BaseLayout>
-		<ul>
+		<div class="cards_content_main">
+			<h3>Artículos recientes</h3>
 			{allPosts.map((post: any) => <CardPostLayout
 				img={post.frontmatter.image.url}
 				title={post.frontmatter.title}
@@ -19,8 +24,7 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}))
 				date={post.frontmatter.pubDate}
 				link={post.url}
 			/>) }
-		</ul>
+		</div>
 	</BaseLayout>
-	
   </body>
 </html>

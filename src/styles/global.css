@@ -5,10 +5,31 @@
 }
 
 body{
-   background-color:#f2f4f7;
+   background-color: black;
 }
 
 main{
-    width: 1050px;
+    width: 850px;
     margin: 0px auto;
+    z-index: 10;
+    position: relative;
+    & .welcome_message{
+        width: 100%;
+        color: white;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Open Sans";
+    }
+    & .cards_content_main{
+        margin-top: 30px;
+        & h3{
+            color: white;
+            font-family: "Open Sans";
+            font-weight: 500;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+    }
 }
